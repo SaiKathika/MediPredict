@@ -1,0 +1,254 @@
+.consultation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 60px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.consultation-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.symptom-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.symptom-field label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.symptom-field input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.result {
+    background: white;
+    padding: 40px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 80px auto 40px auto;
+    text-align: left;
+}
+
+.result h3 {
+    font-size: 2.2rem;
+    color: #ff4d4d;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #ff4d4d;
+    padding-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result h3:hover {
+    color: #e63946;
+    border-bottom-color: #e63946;
+    transition: all 0.3s ease;
+}
+
+/* Grid layout for result sections */
+.result-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.result-section {
+    background: #f8f9fa;
+    padding: 25px;
+    height: 100%;
+}
+
+/* Labels */
+.result-label {
+    color: #0056b3;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.disease-label::before {
+    content: "🏥";
+}
+
+.description-label::before {
+    content: "📋";
+}
+
+.medications-label::before {
+    content: "💊";
+}
+
+.precautions-label::before {
+    content: "⚠️";
+}
+
+.workout-label::before {
+    content: "🏃";
+}
+
+.diet-label::before {
+    content: "🍎";
+}
+
+/* Content */
+.result-content {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 10px 0;
+}
+
+/* List items */
+.result-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.result-list-item {
+    background: #e3f2fd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #0056b3;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .result-sections-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .result {
+        width: 95%;
+        padding: 30px;
+    }
+    
+    .result-section {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .result {
+        width: 98%;
+        padding: 20px;
+    }
+    
+    .result-section {
+        padding: 15px 20px;
+    }
+}
+
+.add-btn,
+.remove-btn,
+.submit-btn {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: #0056b3;
+    color: white;
+}
+
+.add-btn:hover {
+    background-color: #003f7f;
+}
+
+.remove-btn {
+    background-color: #e63946;
+    color: white;
+}
+
+.remove-btn:hover {
+    background-color: #ff4d4d;
+}
+
+.submit-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #e63946;
+}
+
+.medications-list, .diet-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px;
+}
+
+.medication-item, .diet-item {
+    background-color: #f0f7ff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: #1a73e8;
+    font-weight: 500;
+    box-shadow: none;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.medication-item:hover, .diet-item:hover {
+    background-color: #e8f1ff;
+    transform: none;
+    box-shadow: none;
+}
+
+.diet-item {
+    background-color: #f0f7ff;
+    color: #1a73e8;
+}
+
+.diet-item:hover {
+    background-color: #e8f1ff;
+}
+
+.medications-label, .diet-label {
+    color: #1a73e8;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
