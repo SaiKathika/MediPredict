@@ -4,19 +4,13 @@ import numpy as np
 import pickle
 import pandas as pd
 import os
+from routes.auth_routes import auth_bp
 
 app = Flask(__name__)
 CORS(app)
-'''
-# Load your model and data here
-svc = pickle.load(open('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/SVM_model.pkl', 'rb'))
 
-precautions_df = pd.read_csv('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/dataset/precautions_df.csv')
-workout_df = pd.read_csv('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/dataset/workout_df.csv')
-description_df = pd.read_csv('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/dataset/description.csv')
-medications_df = pd.read_csv('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/dataset/medications.csv')
-diets_df = pd.read_csv('/Users/saikrishnakathika/Documents/DATA_236_Distributed_Systems/project/dataset/diets.csv')
-'''
+# Register the auth blueprint
+app.register_blueprint(auth_bp)
 
 # Get the directory of the current script
 base_dir = os.path.dirname(os.path.abspath(__file__))

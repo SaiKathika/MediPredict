@@ -1,0 +1,27 @@
+{
+    "yashaswini.madineni@sjsu.edu": "scrypt:32768:8:1$ASWin8Crk3JrCPMU$c67ec8366d1db90b03613f5d3750cff1eaec597f200b84a9287936f62e8e8f22ddfdd11241626015b58bcbd3f252e41c13a82404df0e85421ff2ae9b69cec9bc",
+    "raghav.maddy@gmail.com": {
+        "firstName": "raggav",
+        "lastName": "maddy",
+        "password": "scrypt:32768:8:1$sbKfBI3s2zPJs2kz$f06fed88a4266277ddd1d7f5c7a6031f1b9bd8d522fa07ebcc2178eb57bd775715667df8b3425de848fc1e40ddd7e924fc5d0b9f39cc63333fde7bb4e0fd00da",
+        "dateOfBirth": "2024-12-11"
+    },
+    "yashchow@sjsu.edu": {
+        "firstName": "yash",
+        "lastName": "chow",
+        "password": "scrypt:32768:8:1$XHYjc8res9JdWcVf$d557f158ee5be00afe6d330814540502ab22876e3533e2e076a47abe2ad1be4c49c78cd48b167298530ad883839a89180e5323f91e9fcba1e19d9f664d1abf7a",
+        "dateOfBirth": "2024-12-03"
+    },
+    "sai@gmail.com": {
+        "firstName": "sai",
+        "lastName": "krishna",
+        "password": "scrypt:32768:8:1$fEkJpwH2INB4ydj6$4034371f50434d7f7255b14cf597160cfdce10348960cc2dcae131db360dcd534205458f9f5958d8ae7ede32c629b401789661f93fc1b1d5b8dc8b9b1b8c8654",
+        "dateOfBirth": "2024-12-01"
+    },
+    "rahul@gmail.com": {
+        "firstName": "rahul",
+        "lastName": "rahul",
+        "password": "scrypt:32768:8:1$wajEzLgfMNHuZRys$8c120665116aae91df1a79d936b9c2aed7f2e1c8cbbc83156395d7b5647633f76b32ff56b3753ea7438161ae6dbfc26484e0b330994320fad4e244643cb43212",
+        "dateOfBirth": "2024-12-10"
+    }
+}

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './App.css';
 import './home.css';
+import './login.css';
 import './ConsultationForm.css';
 import Lottie from "react-lottie";
 import animationData from "./asserts/Animation - 1733205681766.json";
@@ -15,42 +17,73 @@ const defaultOptions = {
     },
 };
 
-const Home = () => {
+const Home = ({ isLoggedIn, setIsLoggedIn }) => {
     const [isHomePage, setIsHomePage] = useState(true);
+    const navigate = useNavigate();
 
     const handleLogoClick = () => {
         setIsHomePage(true);
     };
 
     const handleButtonClick = () => {
+        if (!isLoggedIn) {
+            alert("Please login to get started");
+            navigate('/login');
+            return;
+        }
         setIsHomePage(false);
+    };
+
+    const handleLogout = () => {
+        setIsLoggedIn(false);
+        setIsHomePage(true);
+        navigate('/');
     };
 
     return (
         <div className="page-wrapper">
-            {/* Header Section */}
             <header className="header">
                 <div className="logo" onClick={handleLogoClick}>
                     Medi-Predict
                 </div>
                 <nav className="nav">
+                    <div className="menu-container">
+                        <button className="menu-button">
+                            Menu ☰
+                        </button>
+                        <div className="menu-dropdown">
+                            <a href="#services">Our Services</a>
+                            <a href="#diseases">Common Diseases</a>
+                            <a href="#health-tips">Health Tips</a>
+                            <a href="#emergency">Emergency Contact</a>
+                            {isLoggedIn && (
+                                <button onClick={handleLogout} className="logout-btn">
+                                    Logout
+                                </button>
+                            )}
+                        </div>
+                    </div>
                     <a href="#about">About Us</a>
+                    {!isLoggedIn && (
+                        <>
+                            <a href="/login" className="nav-auth-btn">Login</a>
+                            <a href="/signup" className="nav-auth-btn signup">Sign Up</a>
+                        </>
+                    )}
                 </nav>
             </header>
 
-            {/* Conditional Rendering */}
             {isHomePage ? (
                 <div className="home-container">
-                    {/* Main Content */}
                     <div className="main-content">
                         <h2 className="tagline">
                             <span>Every Symptom Has a Solution –</span>
-                            <span> Let’s Find Yours.</span>
+                            <span> Let's Find Yours.</span>
                         </h2>
                         <Lottie options={defaultOptions} height={300} width={300} />
                         <h1 className="title">Consult us anytime, 24 x 7</h1>
                         <button className="consult-btn" onClick={handleButtonClick}>
-                            Start Consultation<span className="arrow"></span>
+                            Start Consultation
                         </button>
                     </div>
                 </div>
@@ -58,25 +91,25 @@ const Home = () => {
                 <ConsultationForm />
             )}
 
-            {/* Footer Section */}
             <footer className="footer">
                 <div className="footer-content">
                     <div className="footer-section">
                         <h4>Services</h4>
                         <ul>
-                            <li>Disease Prediction</li>
-                            <li>Prescription Recommendations</li>
-                            <li>Symptom Analysis</li>
-                            <li>24/7 Support</li>
+                            <li><a href="#consultation">Online Consultation</a></li>
+                            <li><a href="#diagnosis">Health Diagnosis</a></li>
+                            <li><a href="#prescription">E-Prescriptions</a></li>
+                            <li><a href="#followup">Follow-up Care</a></li>
                         </ul>
                     </div>
 
                     <div className="footer-section">
                         <h4>Resources</h4>
                         <ul>
-                            <li><a href="#faq">FAQ</a></li>
-                            <li><a href="#blog">Blog</a></li>
-                            <li><a href="#support">Support</a></li>
+                            <li><a href="#blog">Health Blog</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
                         </ul>
                     </div>
 
